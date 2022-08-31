@@ -36,7 +36,7 @@ class Transaction extends Model
             $fromDate = date($request->from_date);
             $toDate = date($request->to_date);
             $query->whereBetween('date',[$fromDate,$toDate]);
-            if($request->product_category_id){
+            if($request->product_category_id && $request->product_id){
             $query->where('product_category_id',$request->product_category_id)
             ->where('product_id',$request->product_id)->where('type','customer');     
         }})->sum('amount'); 
@@ -45,7 +45,7 @@ class Transaction extends Model
             $fromDate = date($request->from_date);
             $toDate = date($request->to_date);
             $query->whereBetween('date',[$fromDate,$toDate]);
-            if($request->product_category_id){
+            if($request->product_category_id && $request->product_id){
             $query->where('product_category_id',$request->product_category_id)
             ->where('product_id',$request->product_id)->where('type','vendor');     
         }})->sum('amount'); 
