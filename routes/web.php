@@ -51,7 +51,7 @@ Route::middleware([
 
     Route::post('/get-price',[AjaxController::class,'price'])->name('get_price'); 
     
-    Route::post('/get-price',[AjaxController::class,'purchasePrice'])->name('get_purchase_price'); 
+    Route::post('/get-purchase-price',[AjaxController::class,'purchasePrice'])->name('get_purchase_price'); 
     
     Route::get('/report',[ReportController::class,'report'])->name('report');
    
